@@ -1,0 +1,38 @@
+---
+
+ - name: Ansible playbook
+
+   hosts: playbook
+   
+   become_user: root
+   
+
+   
+
+   tasks:
+   
+    - name: Start the docker server
+      service: name= docker state= started
+      
+
+    - name: Build docker image
+
+      command: docker build -t "myimage" /home/edureka/problemstatement1 .
+
+      
+
+    - name: Tag image
+
+      command: docker tag myimage mithileshindurkar/myimage
+      
+    - name: Docker login
+    
+      command: docker login --username mithileshindurkar password P@ssw0rd123
+
+      
+
+    - name: Push the image
+
+      command: docker push mithileshindurkar/myimage
+
+      
