@@ -2,7 +2,7 @@
 
  - name: Ansible playbook
 
-   hosts: playbook
+   hosts: localhost
    
    become_user: root
    
