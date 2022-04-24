@@ -17,7 +17,7 @@
 
     - name: Build docker image
 
-      command: docker build -t "myimage" /home/edureka/problemstatement1 .
+      command: docker build -t "myimage" /home/edureka/problemstatement1
 
       
 
