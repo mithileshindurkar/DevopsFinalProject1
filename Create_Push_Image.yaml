@@ -36,5 +36,10 @@
     - name: Push the image
 
       command: docker push mithileshindurkar/myimage
+      
+      
+    - name: Do deployment in Docker Swarm cluster
+    
+      command: docker service create --name addressbook-app --replicas 1 -p 8282:8080 mithileshindurkar/myimage:latest
 
       
