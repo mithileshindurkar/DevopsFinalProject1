@@ -21,13 +21,13 @@
 
     - name: Build docker image
 
-      command: docker build -t "myimage" /home/edureka/problemstatement1
+      command: docker build -t "trainappimage" /home/edureka/problemstatement2
 
       
 
     - name: Tag image
 
-      command: docker tag myimage mithileshindurkar/myimage
+      command: docker tag trainappimage mithileshindurkar/trainappimage
       
     
 
@@ -35,11 +35,26 @@
 
     - name: Push the image
 
-      command: docker push mithileshindurkar/myimage
+      command: docker push mithileshindurkar/trainappimage
       
       
     - name: Do deployment in Docker Swarm cluster
     
-      command: docker service create --name addressbook-app --replicas 1 -p 8282:8080 mithileshindurkar/myimage:latest
+      command: docker service create --name addressbook-app --replicas 1 -p 8181:8080 mithileshindurkar/trainappimage:latest
+      
+      
+      
+      
+    - name: Deploy in kubernetes
+      
+      command: kubectl apply -f /home/edureka/problemstatement2/TrainScheduleDeployment.yaml
+      
+    - name: Service in kubernetes
+      
+      command: kubectl apply -f /home/edureka/problemstatement2/TrainScheduleService.yaml
+      
+    - name: HPA in kubernetes
+      
+      command: kubectl apply -f /home/edureka/problemstatement2/hpa.yaml
 
       
