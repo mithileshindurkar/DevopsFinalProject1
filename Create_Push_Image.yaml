@@ -16,7 +16,7 @@
       
     - name: Docker login
     
-      command: docker login --username mithileshindurkar password P@ssw0rd123
+      command: docker login --username mithileshindurkar --password P@ssw0rd123
       
 
     - name: Build docker image
