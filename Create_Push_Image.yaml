@@ -45,16 +45,16 @@
       
       
       
-    - name: Deploy in kubernetes
+ #   - name: Deploy in kubernetes
       
-      command: kubectl apply -f /home/edureka/problemstatement2/TrainScheduleDeployment.yaml
+ #     command: kubectl apply -f /home/edureka/problemstatement2/TrainScheduleDeployment.yaml
       
-    - name: Service in kubernetes
+ #   - name: Service in kubernetes
       
-      command: kubectl apply -f /home/edureka/problemstatement2/TrainScheduleService.yaml
+ #     command: kubectl apply -f /home/edureka/problemstatement2/TrainScheduleService.yaml
       
-    - name: HPA in kubernetes
+ #   - name: HPA in kubernetes
       
-      command: kubectl apply -f /home/edureka/problemstatement2/hpa.yaml
+ #     command: kubectl apply -f /home/edureka/problemstatement2/hpa.yaml
 
       
