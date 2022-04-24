@@ -38,9 +38,9 @@
       command: docker push mithileshindurkar/trainappimage
       
       
-    - name: Do deployment in Docker Swarm cluster
+   # - name: Do deployment in Docker Swarm cluster
     
-      command: docker service create --name addressbook-app --replicas 1 -p 8181:8080 mithileshindurkar/trainappimage:latest
+   #  command: docker service create --name addressbook-app --replicas 1 -p 8181:8080 mithileshindurkar/trainappimage:latest
       
       
       
