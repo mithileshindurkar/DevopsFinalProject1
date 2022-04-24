@@ -14,6 +14,10 @@
     - name: Start the docker server
       service: name=docker state=started
       
+    - name: Docker login
+    
+      command: docker login --username mithileshindurkar password P@ssw0rd123
+      
 
     - name: Build docker image
 
@@ -25,9 +29,7 @@
 
       command: docker tag myimage mithileshindurkar/myimage
       
-    - name: Docker login
     
-      command: docker login --username mithileshindurkar password P@ssw0rd123
 
       
 
