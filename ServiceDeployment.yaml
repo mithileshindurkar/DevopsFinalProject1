@@ -34,3 +34,16 @@ spec:
   selector:
     app: addressbook
   type: LoadBalancer
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: addressbook
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: addressbook
+  targetCPUUtilizationPercentage: 90
