@@ -21,13 +21,13 @@
 
     - name: Build docker image
 
-      command: docker build -t "trainappimage" /home/edureka/problemstatement2
+      command: docker build -t "myimage" /home/edureka/problemstatement2
 
       
 
     - name: Tag image
 
-      command: docker tag trainappimage mithileshindurkar/trainappimage
+      command: docker tag myimage mithileshindurkar/myimage
       
     
 
@@ -35,12 +35,12 @@
 
     - name: Push the image
 
-      command: docker push mithileshindurkar/trainappimage
+      command: docker push mithileshindurkar/myimage
       
       
    # - name: Do deployment in Docker Swarm cluster
     
-   #  command: docker service create --name addressbook-app --replicas 1 -p 8181:8080 mithileshindurkar/trainappimage:latest
+   #  command: docker service create --name addressbook-app --replicas 1 -p 8181:8080 mithileshindurkar/myimage:latest
       
       
       
