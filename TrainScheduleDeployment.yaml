@@ -23,7 +23,7 @@ spec:
               image: mithileshindurkar/myimage
               ports:
                 - containerPort: 8080
-              resources:
-                  requests:
-                    cpu: 200m
+            resources:
+              requests:
+              cpu: 200m
             
