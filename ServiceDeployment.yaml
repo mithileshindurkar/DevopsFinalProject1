@@ -22,15 +22,3 @@ spec:
       containers:
        - name: app
          image: mithileshindurkar/myimage
----
-kind: Service
-apiVersion: v1
-metadata:
-   name: addressbook-svc
-spec:
-  type: LoadBalancer
-  ports:
-    - port: 8080
-      targetPort: 8080
-  selector:
-    app: addressbook
