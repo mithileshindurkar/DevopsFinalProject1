@@ -1,0 +1,36 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: addressbook
+spec:
+  replicas: 1
+  minReadySeconds: 10 # wait for 45 sec before going to deploy next pod
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1        # max number of pods to run for the deployment
+  selector:
+    matchLabels:
+      app: addressbook
+  template:
+    metadata:
+      name: addressbook
+      labels:
+        app: addressbook
+    spec:
+      containers:
+       - name: app
+         image: mithileshindurkar/myimage
+---
+kind: Service
+apiVersion: v1
+metadata:
+   name: addressbook-svc
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: addressbook
