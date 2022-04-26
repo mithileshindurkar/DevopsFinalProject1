@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata: 
+    name: ServiceTrainSchedule
+spec:
+    type:NodePort
+    selector:
+        name: trainApp
+        app: trainApp
+        
+    ports:
+        - port: 8080
+          nodePort: 8080		
